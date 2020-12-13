@@ -1,12 +1,14 @@
 # main links
 main:
-  - title: "A link"
-    url: https://xiubert.github.io
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
+  - title: "About"
+    url: /about/
+  - title: "Noise creation"
+    url: /noiseCreation/
+  - title: "Noise consumption"
+    url: /noiseConsumption/
+  - title: "Noise study"
+    url: /noiseStudy/
   # - title: "Sitemap"
   #   url: /sitemap/
+  # - title: "Noise study"
+  #   url: https://github.com/xiubert
