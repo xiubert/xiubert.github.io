@@ -85,10 +85,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google-universal" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          :
-    anonymize_ip         : # true, false (default)
+    tracking_id          : "UA-186411464-1"
+    anonymize_ip         : false # true, false (default)
 
 
 # Site Author
@@ -116,7 +116,10 @@ author:
       url: "https://github.com/xiubert"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://www.instagram.com/apresgarde/"
+    # - label: "soundcloud"
+    #   icon: "fab fab fa-soundcloud"
+    #   url: "https://soundcloud.com/mediakit"
 
 # Site Footer
 footer:
