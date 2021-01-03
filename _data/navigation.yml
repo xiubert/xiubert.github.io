@@ -1,11 +1,13 @@
 # main links
 main:
-  - title: "About"
-    url: /about/
-  - title: "Noise creation"
-    url: /noiseCreation/
+  # - title: "About"
+  #   url: /about/
   - title: "Noise consumption"
     url: /noiseConsumption/
+  - title: "Noise creation"
+    url: /noiseCreation/  
+  - title: "Noise surfing"
+    url: /noiseSurfing/
   - title: "Noise study"
     url: /noiseStudy/
   # - title: "Sitemap"
