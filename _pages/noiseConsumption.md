@@ -2,6 +2,9 @@
 permalink: /noiseConsumption/
 title: "Noise Consumption"
 toc: true
+toc_label: "contents:"
+toc_icon: "fas fa-broadcast-tower"
+last_modified_at: 6/1/2021
 ---
 
 This here is all about consuming the noise, mostly concerning the how.

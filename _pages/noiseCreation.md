@@ -2,6 +2,8 @@
 permalink: /noiseCreation/
 title: "Noise Creation"
 toc: true
+toc_label: "contents:"
+last_modified_at: 6/1/2021
 ---
 
 This here concerns mostly the how of making the noise.

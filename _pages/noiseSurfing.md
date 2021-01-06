@@ -2,6 +2,8 @@
 permalink: /noiseSurfing/
 title: "Noise Surfing"
 toc: true
+toc_label: "contents:"
+last_modified_at: 6/1/2021
 ---
 
 This here is concerned with surfing the noise that is the internet. Let's say you've got root shell access some place in the internet. The below are tools that make use of that for somewhat sub rosa surfing or surfing over hurdles and around obstacles.
