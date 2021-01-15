@@ -1,6 +1,9 @@
 ---
 permalink: /noiseStudy/
 title: "Noise Study"
+toc: true
+toc_label: "contents:"
+last_modified_at: 15/1/2021
 ---
 
 Noise regarding the study of noise.
