@@ -18,5 +18,12 @@ This here is where I share and keep track of rabbit holes I've taken through the
 <h1>[Noise surfing](/noiseSurfing/)</h1>
 <h2>[Surfing over hurdles and around obstacles](/noiseSurfing/#surfing-over-hurdles-and-around-obstacles)</h2>
 <h2>[Somewhat sub rosa surfing](/noiseSurfing/#somewhat-sub-rosa-surfing)</h2>
+<h1>[Noise study](/noiseStudy/)</h1>
+<h2>[References for delving into the noise](/noiseStudy/#delving-into-the-noise/)</h2>
+<h3>[SOUND](/noiseStudy/#sound)</h3>
+<h3>[BRAIN](/noiseStudy/#brain)</h3>
+<h3>[MATH](/noiseStudy/#math)</h3>
+<h3>[STATS](/noiseStudy/#stats)</h3>
+
 </p>
 </details>

@@ -21,11 +21,10 @@ Resources that I frequently return to when thinking about the noise.
 
 
 ## BRAIN
+
 **[The Auditory Cortex](//www.springer.com/us/book/9781441900739)** | **Jeffery A. Winer and Christoph E. Schreiner (Eds.)**. Springer US, 2011
 
-
 **[Hearing Loss:  Causes, Prevention, and Treatment](https://www.sciencedirect.com/book/9780128053980/hearing-loss)** | **Jos J. Eggermont**. Academic Press, 2017
-
 
 **[Auditory Spectral Processing:  An Overview](http://www.sciencedirect.com/science/article/pii/S0074774205700155)** | **Dexter Irvine and Manuel Malmierca (Eds.)**. Academic Press, 2005
 
