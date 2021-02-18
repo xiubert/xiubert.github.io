@@ -242,7 +242,7 @@ When you have a substantial lot of noise and you need to keep that stuff organiz
 
 __________________________
 
-### Taking charge of our subsonic/airsonic/madsonic database ( via SQL ):
+### Taking charge of your subsonic/airsonic/madsonic database ( via SQL ):
 
 February 17, 2021
 
