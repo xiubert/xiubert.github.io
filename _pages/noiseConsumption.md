@@ -235,6 +235,98 @@ Forked-daapd automatically detects sound at named FIFO pipe (either `lineInPipe`
 
 When you have a substantial lot of noise and you need to keep that stuff organized so that it doesn't take you an hour to find that one song by that singer with the hair.
 
-free: [beets](https://beets.readthedocs.io/en/stable/)
+### tools:
+- free as in beer: [beets](https://beets.readthedocs.io/en/stable/)
 
-not free, but easy and reliable: [Roon](https://roonlabs.com/features)
+- not free as in beer, easy, reliable, robust: [Roon](https://roonlabs.com/features)
+
+__________________________
+
+### Taking charge of our subsonic/airsonic/madsonic database ( via SQL ):
+
+February 17, 2021
+
+This could be of use to migrate from [Subsonic](http://www.subsonic.org/pages/index.jsp) to [Roon](https://roonlabs.com/features).
+
+Rather than navigate Subsonic API docs and query the server, I found it easier to directly access the database.  By default Subsonic uses a HyperSQL database (HSQLDB).  See your trusty Arch docs [here](https://wiki.archlinux.org/index.php/Subsonic#Accessing_the_database).  If I were to start another Subsonic server from scratch, I'd probably opt instead for something more [flexible](http://www.subsonic.org/pages/database.jsp) like PostgreSQL.
+
+See this helpful [reddit post]( https://www.reddit.com/r/subsonic/comments/7c2n6j/database_table_schema/) for a breakdown of the HSQLDB schema.  Also see [airsonic docs](https://airsonic.github.io/docs/database/).
+
+GOAL:  Query playlists by keywords to aggregate file paths to eventually split by top directory so that Roon can scrape them respective of directory.
+
+1. Acquire SqlTool If you're on debian:  `sudo apt install hsqldb-utils`. Otherwise as noted in the [airsonic docs](https://airsonic.github.io/docs/database/) grab and unzip the `hsqldb.jar` file from [here](https://sourceforge.net/projects/hsqldb/files/hsqldb/hsqldb_1_8_1/) and use your JRE to call the sqltool.
+
+2. Run queries interactively. If you desire, output to file with `\o filename.ext` preceding your query.
+
+     **WARNING:  STOP SUBSONIC, MAKE A COPY OF THE `db` FOLDER, and use that for your queries.**
+     `cd /var/subsonic/db.copy`
+
+     `hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password=`
+     
+     NOTE: database users aren't mapped from settings, use exact user and pass as above.
+
+     Again, for output to file, precede queries w/ this:
+     `\o outputFile.txt`
+
+     You can do this to optimize your queries then save query commands in `.sql` files and redirect output via shell: 
+     
+3. Run queries stored in `.sql` files.  Here I'm looking for media file paths in playlists that include the word 'house':
+
+     `cat sqlFile.sql`
+    ```
+    SELECT M.PATH FROM MEDIA_FILE M WHERE M.ID IN (
+      SELECT DISTINCT A.MEDIA_FILE_ID FROM PLAYLIST_FILE A WHERE A.PLAYLIST_ID IN (
+        SELECT P.ID FROM PLAYLIST P WHERE P.NAME LIKE '%house%'));
+    ```
+
+    run this query on your copied db:
+
+    `hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password= sqlFile.sql > housePlaylists.txt 2>&1`
+
+4.  Process your query outputs!
+
+    `cat splitMediaByTopDir.sh`
+
+    ```
+    #!/bin/bash
+
+    echo "splitting $1 into separate playlists"
+
+    paths="random1 random2 /audio/random/ /audio/web/"
+
+    pathLineCount=0
+    for path in $paths
+    do
+      pathLineCount=$(( $pathLineCount + $(grep $path $1 | wc -l) ))
+    done
+    echo "counted files in path list: $pathLineCount"
+    lineCount=$(grep mnt $1 | wc -l)
+    echo "all lines: $lineCount"
+
+    if [[ "$pathLineCount" == "$lineCount" ]]; then
+      echo "all paths accounted for"
+      for path in $paths
+      do
+        if [[ "$path" == *"audio"* ]]; then
+          echo "path has slashes"
+          fixpath=${path//\/audio\//}
+          fixpath=${fixpath//\//}
+        else
+          fixpath=$path
+        fi
+        echo "#EXTM3U" > ${1/.txt/_$fixpath.m3u8}
+        grep $path $1 >> ${1/.txt/_$fixpath.m3u8}
+      done
+    else
+      echo "doing nothing, there are paths not accounted for"
+    fi
+    ```
+
+    Run your script:
+
+    `./splitMediaByTopDir.sh housePlaylists.txt`
+
+    Finally:  drop your playlists in your roon storage directories!
+
+
+
