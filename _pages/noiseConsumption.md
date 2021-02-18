@@ -284,7 +284,7 @@ GOAL:  Query playlists by keywords to aggregate file paths to eventually split b
     run this query on your copied db:
 
     ```
-    hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password= sqlFile.sql > housePlaylists.txt 2>&1`
+    hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password= sqlFile.sql > housePlaylists.txt 2>&1
     ```
 
 4.  Process your query outputs!

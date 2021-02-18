@@ -1,3 +1,42 @@
 <!-- start custom footer snippets -->
 
+<!-- <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+
+<script type="text/javascript" src="/assets/js/jquery.min.js" ></script>
+
+
+<script type="text/javascript">$(document).ready(function() { 
+
+//  jQuery(function($) {
+//     $(window).scroll(function (event) {
+//         var scroll = $(window).scrollTop();
+//          if(scroll > 70) {
+//               $('.x-colophon.bottom').addClass('page__footer-copyright');
+//          }else {
+//               $('.x-colophon.bottom').removeClass('page__footer-copyright');
+//          }
+//     });
+//     });
+
+jQuery(function($) {
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+         if(scroll > 99) {
+            $('.page__footer').removeClass('page__footer-copyright');
+            // <div class="footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+         }else {
+            $('.page__footer').removeClass('page__footer-copyright');
+            //   $('.x-colophon.bottom').removeClass('page__footer-copyright');
+         }
+    });
+    });
+
+
+});
+
+</script> -->
+
+
+
 <!-- end custom footer snippets -->
