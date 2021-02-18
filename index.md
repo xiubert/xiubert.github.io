@@ -11,6 +11,7 @@ This here is where I share and keep track of rabbit holes I've taken through the
 <p>
 <h1>[Noise consumption](/noiseConsumption/)</h1>
 <h2>[Multi-room audio](/noiseConsumption/#multi-room-audio)</h2>
+<h2>[Noise organization](/noiseConsumption/#noise-organization)</h2>
 <h1>[Noise creation](/noiseCreation/)</h1>
 <h2>[Linux audio links](/noiseCreation/#places-of-interest)</h2>
 <h2>[Patching the kernel for real-time audio on Raspberry Pi](/noiseCreation/#patching-the-kernel-for-real-time-audio-on-raspberry-pi-preempt_rt)</h2>
