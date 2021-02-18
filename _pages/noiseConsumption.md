@@ -235,7 +235,7 @@ Forked-daapd automatically detects sound at named FIFO pipe (either `lineInPipe`
 
 When you have a substantial lot of noise and you need to keep that stuff organized so that it doesn't take you an hour to find that one song by that singer with the hair.
 
-### tools:
+### tools
 - free as in beer: [beets](https://beets.readthedocs.io/en/stable/)
 
 - not free as in beer, easy, reliable, robust: [Roon](https://roonlabs.com/features)
@@ -261,8 +261,10 @@ GOAL:  Query playlists by keywords to aggregate file paths to eventually split b
      **WARNING:  STOP SUBSONIC, MAKE A COPY OF THE `db` FOLDER, and use that for your queries.**
      `cd /var/subsonic/db.copy`
 
-     `hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password=`
-     
+     ```
+     hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password=
+     ```
+
      NOTE: database users aren't mapped from settings, use exact user and pass as above.
 
      Again, for output to file, precede queries w/ this:
@@ -281,7 +283,9 @@ GOAL:  Query playlists by keywords to aggregate file paths to eventually split b
 
     run this query on your copied db:
 
-    `hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password= sqlFile.sql > housePlaylists.txt 2>&1`
+    ```
+    hsqldb-sqltool --inlineRc=url=jdbc:hsqldb:file:subsonic,user=sa,password= sqlFile.sql > housePlaylists.txt 2>&1`
+    ```
 
 4.  Process your query outputs!
 
